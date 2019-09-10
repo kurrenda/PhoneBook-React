@@ -10,7 +10,7 @@ const Result = ({user}) => {
         <span>{user.surname}{" "}</span>
     </li>
     </div>
-)}
+)};
 
 
 export default Result;

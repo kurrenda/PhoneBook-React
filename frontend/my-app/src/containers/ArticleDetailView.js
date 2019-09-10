@@ -3,7 +3,7 @@ import Articles from '../components/Article'
 import axios from 'axios';
 
 import { Card } from 'antd';
-
+import CrudForm from '../components/Crud'
 
 class ArticleDetail extends React.Component {
 
@@ -12,8 +12,8 @@ class ArticleDetail extends React.Component {
     }
 
     componentDidMount() {
-        const articleID = this.props.match.params.articleID;
-        axios.get(`http://127.0.0.1:8000/api/art/${articleID}`)
+        const userID = this.props.match.params.userID;
+        axios.get(`http://127.0.0.1:8000/api/art/${userID}`)
             .then( res => {
                 this.setState(({
                     articles: res.data
@@ -24,9 +24,14 @@ class ArticleDetail extends React.Component {
 
     render(){
         return(
-            <Card title={this.state.articles.title}>
-                <p>{this.state.articles.content}</p>
-            </Card>
+            <div>
+                <Card title={this.state.articles.firstname}>
+                    <p>{this.state.articles.surname}</p>
+                </Card>
+                <CrudForm requestType="put" userID={this.props.match.params.userID} btnText="Update"/>
+
+
+            </div>
         )
 
     }

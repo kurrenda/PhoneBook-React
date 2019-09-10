@@ -1,10 +1,20 @@
-from django.urls import path
+from django.urls import path,include
 
-from .views import ArticleListView, ArticleDetailView, ReactFilterView
+from .views import ReactFilterView
+
+from .views import UserViewSet
+from rest_framework.routers import DefaultRouter
+
+
+
+router = DefaultRouter()
+router.register(r'art', UserViewSet, base_name='user')
+
 
 
 urlpatterns = [
-    path('art/', ArticleListView.as_view()),
-    path('art/<pk>', ArticleDetailView.as_view()),
     path('filter/', ReactFilterView.as_view(), name='react'),
+    path('', include(router.urls))
 ]
+
+

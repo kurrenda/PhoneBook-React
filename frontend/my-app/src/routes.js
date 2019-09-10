@@ -8,7 +8,7 @@ import Form from './containers/Form'
 const BaseRouter = () => (
     <div>
         <Route exact path='/asd' component={ArticleList} />
-        <Route exact path='/asd/:articleID' component={ArticleDetail} />
+        <Route exact path='/asd/:userID' component={ArticleDetail} />
         <Route exact path='/' component={Form} />
 
 

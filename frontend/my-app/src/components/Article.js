@@ -39,7 +39,7 @@ const Articles  = (props) => {
 
     renderItem={item => (
       <List.Item
-        key={item.title}
+        key={item.firstname}
         actions={[
           <IconText type="star-o" text="156" key="list-vertical-star-o" />,
           <IconText type="like-o" text="156" key="list-vertical-like-o" />,
@@ -54,9 +54,8 @@ const Articles  = (props) => {
         }
       >
         <List.Item.Meta
-          avatar={<Avatar src={item.avatar} />}
-          title={<a href={`/${item.id}`}>{item.title}</a>}
-          description={item.description}
+          title={<a href={`asd/${item.id}`}>{item.firstname}</a>}
+          description={item.surname}
         />
         {item.content}
       </List.Item>
