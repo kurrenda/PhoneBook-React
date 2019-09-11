@@ -19,14 +19,8 @@ const Articles  = (props) => {
     return(
 
    <div>
-
-  <Search
-      placeholder="input search text"
-      onSearch={value => console.log(value)}
-    />
-
-
   <List
+
     itemLayout="vertical"
     size="large"
     pagination={{
@@ -57,12 +51,10 @@ const Articles  = (props) => {
           title={<a href={`asd/${item.id}`}>{item.firstname}</a>}
           description={item.surname}
         />
-        {item.content}
       </List.Item>
     )}
   />
    </div>
-
     )
 };
 

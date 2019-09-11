@@ -9,7 +9,7 @@ class ArticleList extends React.Component {
     state = {
         articles: []
     }
-    
+
 
 
 
@@ -40,11 +40,10 @@ class ArticleList extends React.Component {
     render(){
         return(
             <div>
-            <Articles data={this.state.articles} />
-            <br/>
             <h2>Create an User </h2>
             <CrudForm requestType="post"
             userId={null}  btnText="Create"/>
+            <Articles data={this.state.articles} />
             </div>
         )
 

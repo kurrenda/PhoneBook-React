@@ -2,36 +2,33 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 
 
-import { Layout, Menu, Breadcrumb } from 'antd';
+import { Layout, Menu, Breadcrumb, Col } from 'antd';
 
 
-const { Header, Content, Footer } = Layout;
+const { Header, Content, Footer, Card } = Layout;
 
 const CustomLayout = (props) => {
     return(
-        <Layout className="layout">
-            <Header>
-              <div className="logo" />
-              <Menu
-                theme="dark"
-                mode="horizontal"
-                defaultSelectedKeys={['2']}
-                style={{ lineHeight: '64px' }}
-              >
-                <Menu.Item key="1"><Link to='/'>Home</Link></Menu.Item>
-                <Menu.Item key="2"><Link to='/'>List</Link></Menu.Item>
-              </Menu>
-            </Header>
-            <Content style={{ padding: '0 50px' }}>
-              <Breadcrumb style={{ margin: '16px 0' }}>
+      <div>
+                <ul className="topNav">
+                    <li><Link to='/'>Home</Link></li>
+                    <li><Link to='/asd'>Data</Link></li>
+
+                </ul>
+              <div className="mainClass">
+                   <Breadcrumb style={{ margin: '24px 10px' }}>
                 <Breadcrumb.Item><Link to='/'>Home</Link></Breadcrumb.Item>
                 <Breadcrumb.Item><Link to='/'>List</Link></Breadcrumb.Item>
               </Breadcrumb>
-              <div style={{ background: '#fff', padding: 24, minHeight: 280 }}>{props.children}</div>
-            </Content>
-            <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
-        </Layout>
+                  {props.children}
+              </div>
+      </div>
     );
 };
+
+
+
+
+
 
 export default CustomLayout;

@@ -32,7 +32,7 @@ class FilterForm extends React.Component {
       this.setState({loading: true});
 
       if (!err) {
-          axios.get('http://127.0.0.1:8000/api/filter/', {
+          axios.get('http://127.0.0.1:8000/api/filter', {
              params: {
                  q
              }

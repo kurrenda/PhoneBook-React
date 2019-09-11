@@ -27,6 +27,13 @@ class CrudForm extends React.Component {
                 .then(res => console.log(res))
                 .catch(error => console.log(error));
 
+            case 'delete':
+                return axios.delete(`http://127.0.0.1:8000/api/art/${userID}/`, {
+                   firstname: firstname,
+                   surname: surname
+                })
+                .then(res => console.log(res))
+                .catch(error => console.log(error));
 
         }
     };

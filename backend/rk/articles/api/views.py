@@ -43,7 +43,7 @@ def query(request):
 
 
 
-class ReactFilterView(CreateAPIView):
+class ReactFilterView(ListAPIView):
     serializer_class = UserSerializer
 
     def get_queryset(self):
